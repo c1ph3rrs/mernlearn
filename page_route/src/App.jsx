@@ -1,22 +1,32 @@
 import './App.css'
-import { createBrowserRouter, RouterProvider} from "react-router";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Dashboard from './components/Dashboard';
 import About from './components/About';
 import User from './components/User';
+import Navbar from './components/Navbar';
 
 const router = createBrowserRouter(
   [
     {
       path: "/",
-      Component: <Dashboard />
+      element: <div>
+        <Navbar />
+        <Dashboard />
+      </div> 
     },
     {
       path: "/about",
-      Component: <About />
+      element: <div>
+      <Navbar />
+      <About />
+    </div> 
     },
     {
       path: "/user",
-      Component: <User />
+      element: <div>
+      <Navbar />
+      <User />
+    </div>  
     }
   ]
 );
